@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JW Player Example</title>
+    <style>
+        /* Basic reset for full-height player */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        /* Container for the JW Player */
+        #jwplayerDiv {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Div container for the JW Player -->
+    <div id="jwplayerDiv"></div>
+    
+    <!-- JW Player script -->
+    <script src="https://content.jwplatform.com/libraries/Z79JsmAO.js"></script>
+    <script>
+        // Initialize JW Player
+        jwplayer("jwplayerDiv").setup({
+            file: "https://delta45tatasky.akamaized.net/out/i/554.mpd",
+            type: "dash",
+            drm: {
+                clearkey: {
+                    key: '79094e073e3191e25052b444ca09da4f',
+                    keyId: 'ae23c4ee57014d289e0821adbbdfebf9'
+                }
+            },
+            width: "100%",
+            height: "100%",
+            controls: true, // Display default controls
+            displaytitle: true, // Show video title
+            logo: {
+                file: '',
+                position: 'top-right'
+            },
+            playbackRateControls: true, // Enable playback speed control
+            volumeControls: true, // Enable volume control
+            sharing: {
+                links: [
+                    { title: 'Share on Facebook', link: 'https://www.facebook.com/sharer/sharer.php?u=' },
+                    { title: 'Share on Twitter', link: 'https://twitter.com/intent/tweet?url=' },
+                    { title: 'Share on LinkedIn', link: 'https://www.linkedin.com/shareArticle?mini=true&url=' }
+                ]
+            },
+            abouttext: "", // Custom about text
+            aboutlink: "", // Link for the about text
+            skin: {
+                active: '#FFFFFF', // Color for active controls
+                inactive: '#FF0000' // Color for inactive controls
+            }
+        });
+    </script>
+</body>
+</html>
